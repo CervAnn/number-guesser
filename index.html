@@ -1,0 +1,76 @@
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <header>
+      <h1>Number Guesser</h1>
+      <p>Ultimate Challenger Edition</p>
+    </header>
+    <main>
+      <section class="current-game">
+        <div class="set-range-box">
+          <h2>Set Range</h2>
+          <label for="min-range">Min Range</label>
+          <input class="input--min-range" type="text" name="min-range"/>
+          <label for="max-range">Max Range</label>
+          <input class="input--max-range" type="text" name="max-range"/>
+          <button class="button--update-range">Update</button>
+        </div>
+        <div class="current-range-box">
+          <p>The Current Range Is <span class="min-number">1</span> To <span class="max-number">100</span></p>
+          <div class="p1-info">
+            <h2>Challenger 1</h2>
+            <label for="p1-name">Name</label>
+            <input class="input--p1-name" type="text" name="p1-name" />
+            <label for="p1-guess">Guess</label>
+            <input class="input--p1-guess" type="text" name="p1-guess" />
+          </div>
+          <div class="p2-info">
+            <h2>Challenger 2</h2>
+            <label for="p2-name">Name</label>
+            <input class="input--p2-name" type="text" name="p2-name"/>
+            <label for="p2-guess">Guess</label>
+            <input class="input--p2-guess" type="text" name="p2-guess" />
+          </div>
+          <div class="range-buttons">
+            <input class="button--submit-guess" type="button" value="Submit Guess">
+            <input class="button--reset-game" type="button" value="Reset Game">
+            <input class="button--clear-game" type="button" value="Clear Game">
+          </div>
+        </div>
+        <div class="latest-score-box">
+          <h2>Latest Score</h2>
+            <div class="output--p1-response">
+              <span class="output--p1-name">Challenger 1 Name</span>
+              <p>current guess</p>
+              <span class="output--p1-guess">97</span>
+              <span class="p1-hi-lo">that's too high</span>
+            </div>
+            <div class="output--p2-response">
+              <span class="output--p2-name">Challenger 2 Name</span>
+              <p>current guess</p>
+              <span class="output--p2-guess">97</span>
+              <span class="p2-hi-lo">that's too low</span>
+            </div>   
+        </div>
+      </section>
+        <div class="winner-box">
+          <div class="contestant-names">
+            <span class="output--p1-name">Challenger 1 Name</span>
+            <p>vs</p>
+            <span class="output--p2-name">Challenger 2 Name</span>
+          </div>
+          <span class="winner-name">Winner Name</span>
+          <div class="game-stats">
+            <span class="guess-count">47</span>
+            <p>guesses</p>
+            <span class="game-timer">1.35</span>
+            <p>minutes</p>
+          </div>
+          <img src="" alt="cancel button"/>
+    </main>
+    <footer>      
+    </footer>
+  </body>
+</html>
