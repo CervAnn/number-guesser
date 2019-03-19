@@ -4,6 +4,12 @@
 
 header {
   background-color: #404041;
+  color: #DD1972;
+  text-align: center;
+}
+
+p {
+  color: #ffffff;
 }
 
 .header-small-text{
