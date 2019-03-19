@@ -1,3 +1,4 @@
+
 var minRange = document.querySelector('.input--min-range');
 var maxRange = document.querySelector('.input--max-range');
 var buttonRangeUpdate = document.querySelector('.button--update-range');
@@ -23,3 +24,6 @@ buttonRangeUpdate.addEventListener("click", getRandom);
 
 console.log(minRange);
 console.log(maxRange);
+
+
+
