@@ -7,18 +7,22 @@
   <body>
     <header>
       <h1>Number <span class="header-small-text">Guesser</span></h1>
-      <p>Ultimate Challenger Edition</p>
+      <p class="header-text">Ultimate Challenger Edition</p>
     </header>
     <main>
       <section class="current-game">
+        <!--                               Set Range Box -->
         <div class="set-range-box">
           <h2>Set Range</h2>
-          <label for="min-range">Min Range</label>
-          <input class="input--min-range" type="text" name="min-range"/>
-          <label for="max-range">Max Range</label>
-          <input class="input--max-range" type="text" name="max-range"/>
-          <button class="button--update-range">Update</button>
+          <div class='ranges'>
+            <label for="min-range">Min Range</label>
+            <label for="max-range">Max Range</label>
+            <input class="input--min-range" type="text" name="min-range"/>
+            <input class="input--max-range" type="text" name="max-range"/>
+            <button class="button--update-range">Update</button>
+          </div>
         </div>
+        <!--                             Current Range Box -->
         <div class="current-range-box">
           <p>The Current Range Is <span class="min-number">1</span> To <span class="max-number">100</span></p>
           <div class="p1-info">
@@ -41,6 +45,7 @@
             <input class="button--clear-game" type="button" value="Clear Game">
           </div>
         </div>
+        <!--                               Latest Score Box -->
         <div class="latest-score-box">
           <h2>Latest Score</h2>
             <div class="output--p1-response">
@@ -57,6 +62,8 @@
             </div>   
         </div>
       </section>
+      <!--                                Finished Games Section -->
+      <section class="finished-games">
         <div class="winner-box">
           <div class="contestant-names">
             <span class="output--p1-name">Challenger 1 Name</span>
@@ -71,6 +78,7 @@
             <p>minutes</p>
           </div>
           <img src="" alt="cancel button"/>
+      </section>    
     </main>
     <footer>      
     </footer>
