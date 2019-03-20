@@ -2,24 +2,27 @@ var minRange = document.querySelector('.input--min-range');
 var maxRange = document.querySelector('.input--max-range');
 var buttonRangeUpdate = document.querySelector('.button--update-range');
 
-function getRandom(minRange, maxRange) {
-  minRange = Math.ceil(minRange);
-  maxRange = Math.floor(maxRange);
-  return Math.floor(Math.random() * (maxRange - minRange)) + minRange;
-  console.log(Math.floor(Math.random() * (maxRange - minRange)) + minRange);
-}
 
 buttonRangeUpdate.addEventListener("click", getRandom);
 
-// { 
+function getRandom() {
+  var min = minRange.value;
+  var max = maxRange.value;
+  console.log(min);
+  console.log(max);
+  // newInput(minInput, max)
+  var randomNum = Math.floor(Math.random() * (max - min)) + min;
+  console.log(randomNum);
+  return randomNum;
+}
 
-//   function getRandom(minRange, maxRange) {
-//   minRange = Math.ceil(minRange)
-//   maxRange = Math.floor(maxRange)
-//   return Math.floor(Math.random() * (maxRange - minRange)) + minRange;
-//   } 
-// };
+// function newInput() {
+//   var min = minRange.value;
+//   var max = maxRange.value;
+//   var minInput =  document.querySelector('.input--min-range').value;
+//   var maxInput = document.querySelector('.input--max-range').value;
 
 
-console.log(minRange);
-console.log(maxRange);
+//   document.querySelector('.min-number', '.max-number').innerText=input;
+// }
+
