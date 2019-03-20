@@ -3,27 +3,19 @@ var minRange = document.querySelector('.input--min-range');
 var maxRange = document.querySelector('.input--max-range');
 var buttonRangeUpdate = document.querySelector('.button--update-range');
 
-function getRandom(minRange, maxRange) {
-  minRange = Math.ceil(minRange);
-  maxRange = Math.floor(maxRange);
-  return Math.floor(Math.random() * (maxRange - minRange)) + minRange;
-  console.log(Math.floor(Math.random() * (maxRange - minRange)) + minRange);
-}
-
 buttonRangeUpdate.addEventListener("click", getRandom);
 
-// { 
+function getRandom() {
+ var min = Math.ceil(minRange.value);
+ var max = Math.floor(maxRange.value);
+ //console.log(min);
+ //console.log(max);
 
-//   function getRandom(minRange, maxRange) {
-//   minRange = Math.ceil(minRange)
-//   maxRange = Math.floor(maxRange)
-//   return Math.floor(Math.random() * (maxRange - minRange)) + minRange;
-//   } 
-// };
+ var randomNum = Math.floor(Math.random() * (max - min)) + min;
+ console.log(randomNum);
+ return randomNum;
+}
 
-
-console.log(minRange);
-console.log(maxRange);
 
 
 
