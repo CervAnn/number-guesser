@@ -5,6 +5,8 @@
   padding:0;
 }
 
+
+
 /*Header*/
 
 header {
@@ -13,7 +15,7 @@ header {
   text-align: center;
 }
 
-p {
+.header-text {
   color: #ffffff;
 }
 
