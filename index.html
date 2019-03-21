@@ -14,11 +14,13 @@
         <!--                               Set Range Box -->
         <div class="set-range-box">
           <h2>Set Range</h2>
+          <!-- Change to form, there will be minor input problems -->
           <div class='ranges'>
             <label for="min-range">Min Range</label>
             <label for="max-range">Max Range</label>
-            <input class="input--min-range" type="text" name="min-range"/>
-            <input class="input--max-range" type="text" name="max-range"/>
+            <!-- Find out how to eliminate e , and - from number -->
+            <input class="input--min-range" type="number" name="min-range"required/>
+            <input class="input--max-range" type="number" name="max-range"required/>
             <button class="button--update-range">Update</button>
           </div>
         </div>
@@ -28,14 +30,14 @@
           <div class="p1-info">
             <h2>Challenger 1</h2>
             <label for="p1-name">Name</label>
-            <input class="input--p1-name" type="text" name="p1-name" />
+            <input class="input--p1-name" type="text" name="p1-name" pattern="[a-zA-Z0-9]"/>
             <label for="p1-guess">Guess</label>
             <input class="input--p1-guess" type="number" name="p1-guess" />
           </div>
           <div class="p2-info">
             <h2>Challenger 2</h2>
             <label for="p2-name">Name</label>
-            <input class="input--p2-name" type="text" name="p2-name"/>
+            <input class="input--p2-name" type="text" name="p2-name" pattern="[a-zA-Z0-9 ]+"/>
             <label for="p2-guess">Guess</label>
             <input class="input--p2-guess" type="number" name="p2-guess" />
           </div>
@@ -52,13 +54,13 @@
               <span class="output--p1-name">Challenger 1 Name</span>
               <p>current guess</p>
               <span class="output--p1-guess">97</span>
-              <span class="p1-hi-lo">that's too high</span>
+              <span class="p1-hi-lo">that's</span>
             </div>
             <div class="output--p2-response">
               <span class="output--p2-name">Challenger 2 Name</span>
               <p>current guess</p>
               <span class="output--p2-guess">97</span>
-              <span class="p2-hi-lo">that's too low</span>
+              <span class="p2-hi-lo">that's</span>
             </div>   
         </div>
       </section>
