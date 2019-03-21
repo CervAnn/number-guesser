@@ -5,16 +5,17 @@ var buttonRangeUpdate = document.querySelector('.button--update-range');
 var minNumber = document.querySelector('.min-number');
 var maxNumber = document.querySelector('.max-number');
 
-var p1NameInput  = document.querySelector('.input--p1-name')
-var p2NameInput  = document.querySelector('.input--p2-name')
+var p1NameInput  = document.querySelector('.input--p1-name');
+var p2NameInput  = document.querySelector('.input--p2-name');
 var buttonSubmitGuess = document.querySelector('.button--submit-guess');
-var p1NameOutput  = document.querySelector('.output--p1-name')
-var p2NameOutput  = document.querySelector('.output--p2-name')
+var p1NameOutput  = document.querySelector('.output--p1-name');
+var p2NameOutput  = document.querySelector('.output--p2-name');
 
-var p1GuessInput  = document.querySelector('.input--p1-guess')
-var p2GuessInput  = document.querySelector('.input--p2-guess')
-var p1GuessOutput  = document.querySelector('.output--p1-guess')
-var p2GuessOutput  = document.querySelector('.output--p2-guess')
+var p1GuessInput  = document.querySelector('.input--p1-guess');
+var p2GuessInput  = document.querySelector('.input--p2-guess');
+var p1GuessOutput  = document.querySelector('.output--p1-guess');
+var p2GuessOutput  = document.querySelector('.output--p2-guess');
+var randomNum
 
 
 buttonRangeUpdate.addEventListener("click", getRandom);
@@ -25,7 +26,7 @@ function getRandom() {
  console.log(min);
  console.log(max);
 
- var randomNum = Math.floor(Math.random() * (max - min)) + min;
+ randomNum = Math.floor(Math.random() * (max - min)) + min;
  minNumber.innerText = min;
  maxNumber.innerText = max;
  console.log(randomNum);
@@ -54,3 +55,36 @@ function nameHandler() {
  p2GuessOutput.innerText = g2;
 
 }
+// console.log(randomNum)
+
+function p1Guess() {
+
+ var g1 = p1GuessInput.value;
+ var g2 = p2GuessInput.value;
+
+  if (g1 < randomNum) {
+  state = "that's too low";
+  } 
+  else if (g1 > randomNum) {
+  statement = "that's too high";
+  } 
+  else (g1 == randomNum) {
+  statement = "YOU WIN!";
+  }
+
+}
+
+
+function p2Guess() {
+
+  if (g2 < randomNum) {
+  statement = "that's too low";
+  } 
+  else if (g2 > randomNum) {
+  statement = "that's too high";
+  } 
+  else (g2 == randomNum) {
+  statement = "YOU WIN!";
+  }
+}
+
