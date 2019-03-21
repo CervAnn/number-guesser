@@ -15,7 +15,7 @@ var p1GuessInput  = document.querySelector('.input--p1-guess');
 var p2GuessInput  = document.querySelector('.input--p2-guess');
 var p1GuessOutput  = document.querySelector('.output--p1-guess');
 var p2GuessOutput  = document.querySelector('.output--p2-guess');
-var randomNum
+var randomNum;
 
 
 buttonRangeUpdate.addEventListener("click", getRandom);
@@ -57,34 +57,37 @@ function nameHandler() {
 }
 // console.log(randomNum)
 
-function p1Guess() {
+// function p1Guess() {
 
- var g1 = p1GuessInput.value;
- var g2 = p2GuessInput.value;
+//  var g1 = p1GuessInput.value;
+//  var g2 = p2GuessInput.value;
 
-  if (g1 < randomNum) {
-  state = "that's too low";
-  } 
-  else if (g1 > randomNum) {
-  statement = "that's too high";
-  } 
-  else (g1 == randomNum) {
-  statement = "YOU WIN!";
-  }
+//   if (g1 < randomNum) {
+//   state = "that's too low";
+//   } 
+//   else if (g1 > randomNum) {
+//   statement = "that's too high";
+//   } 
+//   else (g1 == randomNum) {
+//   statement = "YOU WIN!";
+//   }
 
-}
+// }
 
 
-function p2Guess() {
+// function p2Guess() {
 
-  if (g2 < randomNum) {
-  statement = "that's too low";
-  } 
-  else if (g2 > randomNum) {
-  statement = "that's too high";
-  } 
-  else (g2 == randomNum) {
-  statement = "YOU WIN!";
-  }
-}
+//   if (g2 < randomNum) {
+//   statement = "that's too low";
+//   } 
+//   else if (g2 > randomNum) {
+//   statement = "that's too high";
+//   } 
+//   else (g2 == randomNum) {
+//   statement = "YOU WIN!";
+//   }
+// }
 
+// $('#button').click(function() {
+//   $('#hello').prepend(' world!');
+// });
