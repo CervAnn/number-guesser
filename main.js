@@ -19,6 +19,9 @@ var p2GuessOutput  = document.querySelector('.output--p2-guess');
 
 var p1HiLo = document.querySelector('.p1-hi-lo');
 var p2HiLo = document.querySelector('.p2-hi-lo');
+var buttonClear = document.querySelector('.button--clear-game');
+var buttonReset = document.querySelector('.button--reset-game');
+
 
 buttonRangeUpdate.addEventListener("click", getRandom);
 
@@ -101,7 +104,36 @@ function p2Guess() {
 
 // Testing below this line
 
+buttonClear.addEventListener('click', () =>{
+	p1NameOutput.innerText = 'Challenger 1';
+	p2NameOutput.innerText = 'Challenger 2';
+	p1GuessOutput.innerText = 'Challenger 1 needs to guess';
+	p2GuessOutput.innerText = 'Challenger 2 needs to guess';
+	p1HiLo.innerText = '';
+	p2HiLo.innerText = '';
+	p1NameInput.value = '';
+	p2NameInput.value = '';
+	p1GuessInput.value = '';
+	p2GuessInput.value = '';
 
+});
+
+buttonReset.addEventListener('click', () =>{
+	minRange.value = '0';
+	maxRange.value = '100';
+	getRandom();
+	p1NameOutput.innerText = 'Challenger 1';
+	p2NameOutput.innerText = 'Challenger 2';
+	p1GuessOutput.innerText = 'Challenger 1 needs to guess';
+	p2GuessOutput.innerText = 'Challenger 2 needs to guess';
+	p1HiLo.innerText = '';
+	p2HiLo.innerText = '';
+	p1NameInput.value = '';
+	p2NameInput.value = '';
+	p1GuessInput.value = '';
+	p2GuessInput.value = '';
+
+});
 
 
 
