@@ -1,4 +1,8 @@
 
+// 1:Variables
+// 2:addEventListener
+// 3:Functions
+
 var minRange = document.querySelector('.input--min-range');
 var maxRange = document.querySelector('.input--max-range');
 var buttonRangeUpdate = document.querySelector('.button--update-range');
@@ -19,6 +23,10 @@ var p2GuessOutput  = document.querySelector('.output--p2-guess');
 
 var p1HiLo = document.querySelector('.p1-hi-lo');
 var p2HiLo = document.querySelector('.p2-hi-lo');
+var buttonClear = document.querySelector('.button--clear-game');
+var buttonReset = document.querySelector('.button--reset-game');
+
+//checkIfDisabled();
 
 buttonRangeUpdate.addEventListener("click", getRandom);
 
@@ -73,11 +81,11 @@ function p1Guess() {
 	//console.log(p1GuessInput.value)
 
 	 if (g1 < randomNum) {
-	 	p1HiLo.innerText = "that's too low";
+	 	p1HiLo.innerText = "That’s too low";
 	 } else if (g1 > randomNum) {
-	 	p1HiLo.innerText = "that's too high";
+	 	p1HiLo.innerText = "That’s too high";
 	 } else if (g1 == randomNum) {
-	 	p1HiLo.innerText = "YOU WIN!";
+	 	p1HiLo.innerText = "BOOM!";
 	 }
 }
 
@@ -91,40 +99,88 @@ function p2Guess() {
 	//console.log(p2GuessInput.value)
 
 	 if (g2 < randomNum) {
-	 	p2HiLo.innerText = "that's too low";
+	 	p2HiLo.innerText = "That’s too low";
 	 } else if (g2 > randomNum) {
-	 	p2HiLo.innerText = "that's too high";
+	 	p2HiLo.innerText = "That's too high";
 	 } else if (g2 == randomNum) {
-	 	p2HiLo.innerText = "YOU WIN!";
+	 	p2HiLo.innerText = "BOOM!";
 	 }
 }
 
+
+buttonClear.addEventListener('click', () =>{
+  buttonClear.disabled = true;	  // figure out how to make clear button disabled without this line
+	p1NameOutput.innerText = 'Challenger 1';
+	p2NameOutput.innerText = 'Challenger 2';
+	p1GuessOutput.innerText = 'Challenger 1 needs to guess';
+	p2GuessOutput.innerText = 'Challenger 2 needs to guess';
+	p1HiLo.innerText = '';
+	p2HiLo.innerText = '';
+	p1NameInput.value = '';
+	p2NameInput.value = '';
+	p1GuessInput.value = '';
+	p2GuessInput.value = '';
+});
+
+buttonReset.addEventListener('click', () =>{
+	minRange.value = '0';
+	maxRange.value = '100';
+	getRandom();
+	p1NameOutput.innerText = 'Challenger 1';
+	p2NameOutput.innerText = 'Challenger 2';
+	p1GuessOutput.innerText = 'Challenger 1 needs to guess';
+	p2GuessOutput.innerText = 'Challenger 2 needs to guess';
+	p1HiLo.innerText = '';
+	p2HiLo.innerText = '';
+	p1NameInput.value = '';
+	p2NameInput.value = '';
+	p1GuessInput.value = '';
+	p2GuessInput.value = '';
+
+});
+
+
 // Testing below this line
 
+p1NameInput.addEventListener('keydown', checkIfDisabled)
+p2NameInput.addEventListener('keydown', checkIfDisabled)   //try onkeyup on these
+p1GuessInput.addEventListener('keydown', checkIfDisabled)
+p2GuessInput.addEventListener('keydown', checkIfDisabled)
+
+
+function checkIfDisabled(){
+	if(buttonClear.disabled === true){
+		clearDisable()
+	}else{
+		buttonClear.disabled = false;
+	};
+};
 
 
 
+function clearDisable(){ 
+	//buttonClear.disabled = true;
+	if(p1NameInput.value === '' &&
+		 p2NameInput.value === '' &&
+		 p1GuessInput.value === '' &&  // enables when I try to type a letter into the number field
+		 p2GuessInput.value === '');   // enables when I try to type a letter into the number field  
+					console.log(p1GuessInput);
+					console.log(p1GuessInput.value);
+					console.log(p1GuessInput.innerText);
+			{
+		   console.log('clear button disabled');
+		   buttonClear.disabled = false;
+			} 
+};
 
 
+// && buttonClear.disabled === false
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// else{
+// 		console.log('clear button enabled');
+// 		buttonClear.disabled = false;
+// 	};
 
 
 
