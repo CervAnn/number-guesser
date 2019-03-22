@@ -27,6 +27,9 @@ var buttonClear = document.querySelector('.button--clear-game');
 var buttonReset = document.querySelector('.button--reset-game');
 
 //checkIfDisabled();
+//  pseudocode for deleting buttons
+// stuff 
+// stuff 
 
 buttonRangeUpdate.addEventListener("click", getRandom);
 
