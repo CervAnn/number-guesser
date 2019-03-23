@@ -1,66 +1,86 @@
 <html>
   <head>
     <link rel="stylesheet" href="styles.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700,800" rel="stylesheet">
     <script type="text/javascript" src="main.js" async></script>
   </head>
   <body>
     <header>
-      <h1>Number <span class="header-small-text">Guesser</span></h1>
+      <h1>Number<span class="header-small-text">Guesser</span></h1>
       <p class="header-text">Ultimate Challenger Edition</p>
     </header>
     <main>
       <section class="current-game">
-        <!--                               Set Range Box -->
+
+        <!-- Set Range Box -->
+
         <div class="set-range-box">
-          <h2>Set Range</h2>
-          <!-- Change to form, there will be minor input problems -->
-          <div class='ranges'>
+          <div class="range-column1of3">
+            <h2>Set Range</h2>
+            <form class='ranges'>
             <label for="min-range">Min Range</label>
+            <input class="input--min-range" type="number" name="min-range"required/>
+          </div>
+          <div class="range-column2of3">
             <label for="max-range">Max Range</label>
             <!-- Find out how to eliminate e , and - from number -->
-            <input class="input--min-range" type="number" name="min-range"required/>
             <input class="input--max-range" type="number" name="max-range"required/>
-            <button class="button--update-range">Update</button>
           </div>
+          <div class="range-column3of3"> 
+            <input class="button--update-range" type="button" value="UPDATE">
+          </div>
+        </div>
+          </form>
         </div>
         <!--                             Current Range Box -->
         <div class="current-range-box">
-          <p>The Current Range Is <span class="min-number">1</span> To <span class="max-number">100</span></p>
-          <div class="p1-info">
-            <h2>Challenger 1</h2>
-            <label for="p1-name">Name</label>
-            <input class="input--p1-name" type="text" name="p1-name" pattern="[a-zA-Z0-9]"/>
-            <label for="p1-guess">Guess</label>
-            <input class="input--p1-guess" type="number" name="p1-guess" />
-          </div>
-          <div class="p2-info">
-            <h2>Challenger 2</h2>
-            <label for="p2-name">Name</label>
-            <input class="input--p2-name" type="text" name="p2-name" pattern="[a-zA-Z0-9 ]+"/>
-            <label for="p2-guess">Guess</label>
-            <input class="input--p2-guess" type="number" name="p2-guess" />
-          </div>
-          <div class="range-buttons">
-            <input class="button--submit-guess" type="button" value="Submit Guess">
-            <input class="button--reset-game" type="button" value="Reset Game">
-            <input class="button--clear-game" type="button" value="Clear Game">
-          </div>
+          <div class="box-content">
+            <p>The Current Range Is <span class="min-number">1</span> To <span class="max-number">100</span></p>
+              <div class="p1-p2-name-column">
+              <form class="p1-info">
+              <h2>Challenger 1</h2>
+                <div class="p1-name-container"> 
+                  <label for="p1-name">Name</label>
+                  <input class="input--p1-name" type="text" name="p1-name"  pattern="[a-zA-Z0-9]"/>
+                </div>
+                <div class="p1-guess-container">
+                  <label for="p1-guess">Guess</label>
+                  <input class="input--p1-guess" type="number" name="p1-guess" />
+                </div>
+            </form>
+            <form class="p2-info">
+              <h2>Challenger 2</h2>
+              <div class="p2-name-container"> 
+                <label for="p2-name">Name</label>
+                <input class="input--p2-name" type="text" name="p2-name" pattern="[a-zA-Z0-9 ]+"/>
+              </div>
+              <div class="p2-guess-container"> 
+                <label for="p2-guess">Guess</label>
+                <input class="input--p2-guess" type="number" name="p2-guess" />
+              </div>
+            </form>
+            <form class="range-buttons">
+              <input class="button--submit-guess" type="button" value="SUBMIT GUESS">
+              <input class="button--reset-game" type="button" value="RESET GAME">
+              <input class="button--clear-game" type="button" value="CLEAR GAME" disabled>
+            </form>
         </div>
         <!--                               Latest Score Box -->
         <div class="latest-score-box">
-          <h2>Latest Score</h2>
-            <div class="output--p1-response">
-              <span class="output--p1-name">Challenger 1 Name</span>
-              <p>current guess</p>
-              <span class="output--p1-guess">97</span>
-              <span class="p1-hi-lo">that's</span>
-            </div>
-            <div class="output--p2-response">
-              <span class="output--p2-name">Challenger 2 Name</span>
-              <p>current guess</p>
-              <span class="output--p2-guess">97</span>
-              <span class="p2-hi-lo">that's</span>
+          <div class="box-content">
+            <h2>Latest Score</h2>
+              <div class="output--p1-response">
+                <span class="output--p1-name">Challenger 1 Name</span>
+                <p>current guess</p>
+                <span class="output--p1-guess">97</span>
+                <span class="p1-hi-lo">that's</span>
+              </div>
+              <div class="output--p2-response">
+                <span class="output--p2-name">Challenger 2 Name</span>
+                <p>current guess</p>
+                <span class="output--p2-guess">97</span>
+                <span class="p2-hi-lo">that's</span>
+              </div>
             </div>   
         </div>
       </section>

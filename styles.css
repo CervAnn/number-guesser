@@ -1,12 +1,10 @@
 * {
   font-family: 'Open Sans', sans-serif;
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   
 }
-
-
 
 /*Header*/
 
@@ -14,6 +12,12 @@ header {
   background-color: #404041;
   color: #DD1972;
   text-align: center;
+  height: 100px;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: 800;
 }
 
 .header-text {
@@ -21,7 +25,7 @@ header {
 }
 
 .header-small-text{
-
+  font-weight: 400;
 }
 
 /*Main*/
@@ -40,33 +44,44 @@ main{
 
 /*Set Range Box*/
 
-.set-range-box{
-  background-color:#FFFFFF;
-  border:2px solid grey;
+.set-range-box {
+  background-color: #FFFFFF;
+  border: 2px solid #D0D2D3;
+  height: 95px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 16px;
+  margin: 18px;
 }
 
-.ranges{
-display:flex;
-
+h2 {
+  font-size: 15px;
+  color: #6E6E6E;
 }
 
-.input--min-range{
-  display:inline-block;
+form, input, label {
+  color: #6E6E6E;
 }
 
-.input--max-range{
-  display:inline-block;
+.range-column1of3, .range-column2of3, .range-column3of3 {
+flex: 2;
+}
+
+.input--min-range, .input--max-range {
+  font-size: 15px;
 }
 
 .button--update-range{
   background-color:#6E6E6E;
   color:#FFFFFF;
+  width: 22%;
+  min-width: 100px;
+  border-radius: 8pc;
+  height: 30px;
+  font-size: 15px;
+  font-weight: bold;
 }
-
-
-
-
-
 
 
 /*Current Range Box*/
@@ -74,25 +89,58 @@ display:flex;
 .current-range-box{
   background-color:#FFFFFF;
   border:2px solid grey;
+
 }
+
+.range-buttons {
+  color:#FFFFFF;
+}
+
+.input--p1-name, .input--p2-name {
+  font-size: 16px;
+  width: 55%;
+  max-width: 225px;
+}
+
+.input--p1-guess, .input--p2-guess {
+  font-size: 16px;
+  width: 33%;
+  max-width: 225px;
+}
+
 
 .button--submit-guess{
   background-color:#6E6E6E;
   color:#FFFFFF;
+  width: 33%;
+  min-width: 150px;
+  border-radius: 8pc;
+  height: 30px;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .button--reset-game{
   background-color:#D0D2D3;
   color:#FFFFFF;
+  width: 33%;
+  min-width: 150px;
+  border-radius: 8pc;
+  height: 30px;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .button--clear-game{
   background-color:#D0D2D3;
   color:#FFFFFF;
+  width: 33%;
+  min-width: 150px;
+  border-radius: 8pc;
+  height: 30px;
+  font-size: 15px;
+  font-weight: bold;
 }
-
-
-
 
 
 
@@ -103,6 +151,12 @@ display:flex;
 .latest-score-box{
   background-color:#FFFFFF;
   border:2px solid grey;
+  height: 100px;
+}
+
+.output--p1-response, .output--p2-response {
+  text-align: center;
+  float: left;
 }
 
 /*End Current Game Section*/
