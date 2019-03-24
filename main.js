@@ -44,11 +44,14 @@ function getRandom() {
  return randomNum;
 }
 
-
 buttonSubmitGuess.addEventListener("click", () =>{
 	nameHandler();
-	p1Guess();
-	p2Guess();
+	// set variables for what you want to pass in ex query select chal name
+	// pass those variables into p1 guess and p2 guess and interpolate
+	p1Guess(p1NameInput.value, p2NameInput.value);
+	p2Guess(p1NameInput.value, p2NameInput.value);
+	console.log(p1NameInput.value);
+	console.log(p2NameInput.value);
 	});
 
 
@@ -57,18 +60,13 @@ buttonSubmitGuess.addEventListener("click", () =>{
 function nameHandler() {
 	var p1 = p1NameInput.value;
 	var p2 = p2NameInput.value;
-	
-
 	p1NameOutput.innerText = p1;
 	p2NameOutput.innerText = p2;
 
 	var g1 = p1GuessInput.value;
 	var g2 = p2GuessInput.value;
-	
-
 	p1GuessOutput.innerText = g1;
 	p2GuessOutput.innerText = g2;
-
 }
 
 
@@ -83,7 +81,6 @@ function p1Guess() {
 	 	p1HiLo.innerText = "BOOM!";
 	 	p1Correct = p1NameInput.value;
 	 	winnerStatement();
-	 	genCard();
 	 }
 }
 
@@ -100,7 +97,6 @@ function p2Guess() {
 	 	p2HiLo.innerText = "BOOM!";
 	 	p2Correct = p2NameInput.value;
 	 	winnerStatement();
-	 	genCard();
 	 }
 }
 
@@ -112,7 +108,7 @@ function winnerStatement(){
 	}else if(p1Correct === p1NameInput.value){
 		winner = p1NameInput.value;
 		alert('BOOM! ' + winner + ' WINS!');
-		winReset();
+		winReset(winner);
 	}else if(p2Correct === p2NameInput.value){
 		winner = p2NameInput.value;
 		alert('BOOM! ' + winner + ' WINS!');
@@ -120,6 +116,7 @@ function winnerStatement(){
 	}
 
 	function winReset(){
+		genCard(p1NameInput.value, p2NameInput.value, winner);
 		p1Correct = '';
 		p2Correct = '';
 		winner = '';
@@ -228,15 +225,15 @@ function resetDisable(){
 var finishedGames = document.querySelector('.finished-games');
 
 
-function genCard() {
+function genCard(challenger1, challenger2, winner) {
 	var winnerBox = `
 	<div class="winner-box">
           <div class="contestant-names">
-            <span class="output--p1-name">Challenger 1 Name</span>
+            <span class="output--p1-name">${challenger1}</span>
             <p>vs</p>
-            <span class="output--p2-name">Challenger 2 Name</span>
+            <span class="output--p2-name">${challenger2}</span>
           </div>
-          <span class="winner-name">Winner Name</span>
+          <span class="winner-name">${winner} Wins!</span>
           <div class="game-stats">
             <span class="guess-count">47</span>
             <p>guesses</p>
