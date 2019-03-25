@@ -8,6 +8,8 @@
 
 h2{
   color:#6E6E6E;
+  font-size:18px;
+  font-weight:700;
 }
 
 label{
@@ -52,7 +54,13 @@ main{
   background-color:#f7f7f7;
   border-right:1px solid grey;
   padding:10px;
+  height:86%;
   width:50%;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
+  align-items:center;
+
 }
 
 /*Set Range Box*/
@@ -60,24 +68,65 @@ main{
 .set-range-box{
   background-color:#FFFFFF;
   border:2px solid grey;
+  height:17%;
+  width:93%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  align-content: start;
 }
 
 .ranges{
 display:flex;
+flex-wrap:wrap;
+justify-content:space-around;
+align-content:flex-start;
+padding-left:2%;
+padding-right:2%;
+height:75%;
+}
 
+.set-range{
+  width:100%;
+  padding-left:3%;
+}
+.label-min-range{
+  height:25px;
+  width:31%;
+  margin-right:6%;
+}
+
+.label-max-range{
+height:25px;
+  width:59%;
 }
 
 .input--min-range{
   display:inline-block;
+  height:35px;
+  width:31%;
+  margin-right:6%;
 }
 
 .input--max-range{
   display:inline-block;
+  height:35px;
+  width:31%;
+  margin-right:6%;
 }
 
 .button--update-range{
-  background-color:#6E6E6E;
+  /*background-color:#6E6E6E;
+  color:#FFFFFF;*/
+  background-color:#D0D2D3;
   color:#FFFFFF;
+  width: 22%;
+  min-width: 105px;
+  border-radius: 8pc;
+  height:30px;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 
@@ -91,6 +140,17 @@ display:flex;
 .current-range-box{
   background-color:#FFFFFF;
   border:2px solid grey;
+  height:47%;
+  width:93%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.current-range-text{
+  width:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
 .min-number{
@@ -101,19 +161,107 @@ display:flex;
   text-decoration:underline;
 }
 
+.challenger-tag{
+  height:25%;
+  width:100%;
+  padding-left:3%;
+}
+
+.p1-info{
+  height:35%;
+  width:100%;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
+  align-content:flex-start;
+}
+
+.p2-info{
+  height:35%;
+  width:100%;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
+  align-content:flex-start;
+}
+
+.p1-name{
+width:58%;
+}
+
+.p1-guess{
+  width:30%;
+}
+
+.input--p1-name{
+  height:35px;
+  width:58%;
+
+}
+
+.input--p1-guess{
+  height:35px;
+  width:30%;
+}
+
+.p2-name{
+width:58%;
+}
+
+.p2-guess{
+  width:30%;
+}
+
+.input--p2-name{
+  height:35px;
+  width:58%;
+}
+
+.input--p2-guess{
+  height:35px;
+  width:30%;
+}
+
+
+
+.range-buttons{
+  height:10%;
+  width:100%;
+  display:flex;
+  justify-content:space-around;
+}
+
 .button--submit-guess{
-  background-color:#6E6E6E;
+  background-color:#D0D2D3;
   color:#FFFFFF;
+  width: 30%;
+  min-width: 150px;
+  border-radius: 8pc;
+  height: 30px;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .button--reset-game{
   background-color:#D0D2D3;
   color:#FFFFFF;
+  width: 30%;
+  min-width: 150px;
+  border-radius: 8pc;
+  height: 30px;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .button--clear-game{
   background-color:#D0D2D3;
   color:#FFFFFF;
+  width: 30%;
+  min-width: 150px;
+  border-radius: 8pc;
+  height: 30px;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 
@@ -152,13 +300,16 @@ display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  padding-bottom:35px;
+  padding-bottom:25px;
 }
 
 .output--p1-guess{
   font-weight:700;
   font-size:70px;
+  height: 80px;
   color: #DD1972;
+  display:flex;
+  align-items:center;
 }
 
 .output--p2-response{
@@ -169,12 +320,17 @@ display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
+  padding-bottom:10px;
+  padding-top:20px;
 }
 
 .output--p2-guess{
   font-weight:700;
+  height:80px;
   font-size:70px;
   color: #DD1972;
+  display:flex;
+  align-items:center;
 }
 
 
