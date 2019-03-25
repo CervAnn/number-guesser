@@ -19,8 +19,8 @@
             <label for="min-range">Min Range</label>
             <label for="max-range">Max Range</label>
             <!-- Find out how to eliminate e , and - from number -->
-            <input class="input--min-range" type="number" name="min-range"required/>
-            <input class="input--max-range" type="number" name="max-range"required/>
+            <input class="input--min-range" type="number" name="min-range"/>
+            <input class="input--max-range" type="number" name="max-range"/>
             <input class="button--update-range" type="button" value="Update">
           </form>
           </form>
@@ -31,16 +31,16 @@
           <form class="p1-info">
             <h2>Challenger 1</h2>           
               <label for="p1-name">Name</label>
-              <input class="input--p1-name" type="text" name="p1-name"  pattern="[a-zA-Z0-9]"/>
+              <input class="input--p1-name" type="text" name="p1-name"/>
               <label for="p1-guess">Guess</label>
-              <input class="input--p1-guess" type="number" name="p1-guess" />
+              <input class="input--p1-guess" type="number" name="p1-guess"/>
           </form>
           <form class="p2-info">
             <h2>Challenger 2</h2>
             <label for="p2-name">Name</label>
-            <input class="input--p2-name" type="text" name="p2-name" pattern="[a-zA-Z0-9 ]+"/>
+            <input class="input--p2-name" type="text" name="p2-name"/>
             <label for="p2-guess">Guess</label>
-            <input class="input--p2-guess" type="number" name="p2-guess" />
+            <input class="input--p2-guess" type="number" name="p2-guess"/>
           </form>
           <form class="range-buttons">
             <input class="button--submit-guess" type="button" value="Submit Guess">
@@ -50,18 +50,18 @@
         </div>
         <!--                               Latest Score Box -->
         <div class="latest-score-box">
-          <h2>Latest Score</h2>
+          <h2 class="score-header">Latest Score</h2>
             <div class="output--p1-response">
               <span class="output--p1-name">Challenger 1 Name</span>
               <p>Current guess</p>
               <span class="output--p1-guess">#</span>
-              <span class="p1-hi-lo"></span>
+              <span class="p1-hi-lo">hilo</span>
             </div>
             <div class="output--p2-response">
               <span class="output--p2-name">Challenger 2 Name</span>
               <p>Current guess</p>
               <span class="output--p2-guess">#</span>
-              <span class="p2-hi-lo"></span>
+              <span class="p2-hi-lo">hilo</span>
             </div>   
         </div>
       </section>
@@ -70,17 +70,19 @@
         <!-- <div class="winner-box">
           <div class="contestant-names">
             <span class="output--p1-name">Challenger 1 Name</span>
-            <p>vs</p>
+            <p>VS</p>
             <span class="output--p2-name">Challenger 2 Name</span>
           </div>
-          <span class="winner-name">Winner Name</span>
-          <div class="game-stats">
-            <span class="guess-count">47</span>
-            <p>guesses</p>
-            <span class="game-timer">1.35</span>
-            <p>minutes</p>
+          <div class="winner">
+            <span class="winner-name">Nathan</span>
+            <p class="winner-tag">WINNER</p>
           </div>
-          <img src="" alt="cancel button"/> -->
+          <div class="game-stats">
+            <p><span class="guess-count">47</span> GUESSES</p>
+            <p><span class="game-timer">1.35</span> MINUTES</p>
+            <img src="close-button.png" alt="Close button" class="close-button"/>
+          </div>
+        </div> -->
       </section>    
     </main>
     <footer>      

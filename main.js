@@ -3,11 +3,25 @@
 // 2:addEventListener
 // 3:Functions
 
+
 var minRange = document.querySelector('.input--min-range');
 var maxRange = document.querySelector('.input--max-range');
 var buttonRangeUpdate = document.querySelector('.button--update-range');
 var minNumber = document.querySelector('.min-number');
 var maxNumber = document.querySelector('.max-number');
+// var _min = 1;
+// var _max = 100;
+//minRange = Math.min(Math.max(parseInt(number), 1), 100);
+//maxRange = Math.min(Math.max(parseInt(number), 1), 100);
+
+// function minBound(minRange,_min,_max){
+
+//         return Math.max(Math.min(_number, _max), _min);
+// }
+
+// function maxBound(maxRange, _min, _max){
+//         return Math.max(Math.min(_number, _max), _min);
+// }
 
 var p1NameInput  = document.querySelector('.input--p1-name');
 var p2NameInput  = document.querySelector('.input--p2-name');
@@ -31,7 +45,15 @@ var p2Correct;
 var winner;
 
 
-buttonRangeUpdate.addEventListener("click", getRandom);
+buttonRangeUpdate.addEventListener("click", rangeError);
+
+function rangeError(){
+	if(minRange.value >= maxRange.value){
+		//range error alert
+		alert('Min & Max Range Conflict');
+	}else{getRandom()};
+}
+
 
 function getRandom() {
  var min = Math.ceil(minRange.value);
@@ -44,16 +66,32 @@ function getRandom() {
  return randomNum;
 }
 
-buttonSubmitGuess.addEventListener("click", () =>{
-	nameHandler();
-	// set variables for what you want to pass in ex query select chal name
-	// pass those variables into p1 guess and p2 guess and interpolate
-	p1Guess(p1NameInput.value, p2NameInput.value);
-	p2Guess(p1NameInput.value, p2NameInput.value);
-	console.log(p1NameInput.value);
-	console.log(p2NameInput.value);
-	});
+buttonSubmitGuess.addEventListener("click", minError);
 
+
+function minError(){
+	if(minRange.value > p1GuessInput.value){
+		alert('Player 1 Guess Below Range');
+	}else if(minRange.value > p2GuessInput.value){
+		alert('Player 2 Guess Below Range');
+	}else{
+		maxError();
+	}
+	
+	
+};
+
+function maxError(){
+	if(maxRange.value < p1GuessInput.value){
+		alert('Player 1 Guess Over Range');
+	}else if(maxRange.value < p2GuessInput.value){
+		alert('Player 2 Guess Over Range');
+	}else{
+		nameHandler();
+		p1Guess();
+		p2Guess();
+	}
+};
 
 
 
@@ -103,15 +141,15 @@ function p2Guess() {
 function winnerStatement(){
 	if ((p1Correct === p1NameInput.value) && (p2Correct === p2NameInput.value)){
 		winner = "It's a Tie";
-		alert('BOOM! ' + winner);
+		alert('BOOM!');
 		winReset();
 	}else if(p1Correct === p1NameInput.value){
 		winner = p1NameInput.value;
-		alert('BOOM! ' + winner + ' WINS!');
+		alert('BOOM!');
 		winReset(winner);
 	}else if(p2Correct === p2NameInput.value){
 		winner = p2NameInput.value;
-		alert('BOOM! ' + winner + ' WINS!');
+		alert('BOOM!');
 		winReset();
 	}
 
@@ -218,7 +256,6 @@ function resetDisable(){
 			}
 };
 
-// Testing below this line
 
 
 
@@ -230,23 +267,26 @@ function genCard(challenger1, challenger2, winner) {
 	<div class="winner-box">
           <div class="contestant-names">
             <span class="output--p1-name">${challenger1}</span>
-            <p>vs</p>
+            <p>VS</p>
             <span class="output--p2-name">${challenger2}</span>
           </div>
-          <span class="winner-name">${winner} Wins!</span>
-          <div class="game-stats">
-            <span class="guess-count">47</span>
-            <p>guesses</p>
-            <span class="game-timer">1.35</span>
-            <p>minutes</p>
+          <div class="winner">
+            <span class="winner-name">${winner}</span>
+            <p class="winner-tag">WINNER</p>
           </div>
-          <img src="" alt="cancel button"/>
+          <div class="game-stats">
+            <p><span class="guess-count">47</span> GUESSES</p>
+            <p><span class="game-timer">1.35</span> MINUTES</p>
+            <img src="close-button.png" alt="Close button" class="close-button"/>
+          </div>
+        </div>
           `
   finishedGames.insertAdjacentHTML('afterBegin', winnerBox)
 };
-//genCard();
 
 
+
+// Testing below this line
 
 
 
