@@ -1,9 +1,9 @@
 * {
-  box-sizing:border-box;
-  font-family:'Open Sans', sans-serif;
-  font-weight:300;
-  margin:0;
-  padding:0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -13,21 +13,21 @@ h1 {
 }
 
 h2{
-  color:#6E6E6E;
-  font-size:18px;
-  font-weight:700;
+  color: #6E6E6E;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 label{
-  color:#6E6E6E;
+  color: #6E6E6E;
 }
 
 p{
-  color:#6E6E6E;
+  color: #6E6E6E;
 }
 
 span{
-  color:#6E6E6E;
+  color: #6E6E6E;
 }
 
 
@@ -36,7 +36,7 @@ span{
 header {
   background-color: #404041;
   color: #DD1972;
-  height:14%;
+  height: 14%;
   text-align: center;
 }
 
@@ -45,7 +45,7 @@ header {
 }
 
 .header-text:before, .header-text:after {
-  content:"";
+  content: "";
   display: inline-block;
   border-top: solid 1px grey;
   position: relative;
@@ -91,15 +91,15 @@ main{
 /*Set Range Box*/
 
 .set-range-box{
-    background-color: #FFFFFF;
-    border: 2px solid grey;
-    height: 17%;
-    width: 93%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: baseline;
-    align-content: start;
+  background-color: #FFFFFF;
+  border: 2px solid #D0D2D3;
+  height: 17%;
+  width: 93%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  align-content: start;
 }
 
 .ranges{
@@ -111,7 +111,6 @@ main{
 
 .set-range{
   width: 100%;
-  margin-left: 3%;
   display: flex;
   margin-top: 1%;
   margin-left: 3%;
@@ -155,6 +154,13 @@ height:25px;
   font-weight: bold;
 }
 
+.button--update-range:hover {
+  background-color: #F74D9B;
+}
+
+.button--update-range:disabled {
+  
+}
 
 
 
@@ -165,7 +171,7 @@ height:25px;
 
 .current-range-box{
   background-color:#FFFFFF;
-  border:2px solid grey;
+  border:2px solid #D0D2D3;
   height:47%;
   width:93%;
   display: flex;
@@ -173,44 +179,45 @@ height:25px;
 }
 
 .current-range-text{
-    width: 50%;
-    display: flex;
-    margin-top: 1%;
-    margin-left: 3%;
+  width: 50%;
+  display: flex;
+  margin-top: 1%;
+  margin-left: 3%;
 
 }
 
 .min-number, .max-number {
-  text-decoration:underline;
+  text-decoration: underline;
   font-weight: bold;
 }
 
 .challenger-tag{
-  height:25%;
-  width:100%;
-  padding-left:3%;
+  height: 25%;
+  width: 100%;
+  padding-left: 3%;
+  font-weight: bold;
 }
 
 .p1-info{
-  height:35%;
-  width:100%;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:space-around;
-  align-content:flex-start;
+  height: 35%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: flex-start;
 }
 
 .p2-info{
-  height:35%;
-  width:100%;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:space-around;
-  align-content:flex-start;
+  height: 35%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: flex-start;
 }
 
 .p1-name{
-width:58%;
+  width: 58%;
 }
 
 .p1-guess{
@@ -229,7 +236,7 @@ width:58%;
 }
 
 .p2-name{
-width:58%;
+  width:58%;
 }
 
 .p2-guess{
@@ -266,6 +273,10 @@ width:58%;
   font-weight: bold;
 }
 
+.button--submit-guess:hover {
+  background-color: #F74D9B;
+}
+
 .button--reset-game{
   background-color:#D0D2D3;
   color:#FFFFFF;
@@ -299,10 +310,7 @@ width:58%;
 
 .latest-score-box{
   background-color:#FFFFFF;
-  border:2px solid grey;
-}
-
-.latest-score-box{
+  border:2px solid #D0D2D3;
   height:28%;
   width:93%;
   display:flex;
@@ -347,6 +355,7 @@ width:58%;
   padding-bottom:10px;
   padding-top:20px;
 }
+
 
 .output--p2-guess{
   font-weight:700;
@@ -395,11 +404,11 @@ width:58%;
 }
 
 .output--p1-name{
-  font-weight:700;
+  font-weight: bold;
 }
 
 .output--p2-name{
-  font-weight:700;
+  font-weight: bold;
 }
 
 .winner{
@@ -444,9 +453,7 @@ width:58%;
   width:5%;
 }
 
-
-
-
+/*@media screen and (max-width: )*/
 
 
 

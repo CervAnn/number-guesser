@@ -48,8 +48,11 @@ var winner;
 buttonRangeUpdate.addEventListener("click", rangeError);
 
 function rangeError(){
+	console.log(minRange.value)
+	console.log(maxRange.value)
+	console.log(typeof minRange)
+	console.log(typeof maxRange.value)
 	if(minRange.value >= maxRange.value){
-		//range error alert
 		alert('Min & Max Range Conflict');
 	}else{getRandom()};
 }
@@ -70,9 +73,9 @@ buttonSubmitGuess.addEventListener("click", minError);
 
 
 function minError(){
-	if(minRange.value > p1GuessInput.value){
+	if(p1GuessInput.value < minRange.value){
 		alert('Player 1 Guess Below Range');
-	}else if(minRange.value > p2GuessInput.value){
+	}else if(p2GuessInput.value < minRange.value){
 		alert('Player 2 Guess Below Range');
 	}else{
 		maxError();
@@ -80,11 +83,13 @@ function minError(){
 	
 	
 };
-
+//switch p1GuessInput, maxRange//
 function maxError(){
-	if(maxRange.value < p1GuessInput.value){
+	// if(maxRange.value < p1GuessInput.value){
+		if(p1GuessInput.value > maxRange.value){
 		alert('Player 1 Guess Over Range');
-	}else if(maxRange.value < p2GuessInput.value){
+	}else if(p2GuessInput.value > maxRange.value){
+	// }else if(maxRange.value < p2GuessInput.value){
 		alert('Player 2 Guess Over Range');
 	}else{
 		nameHandler();
@@ -288,7 +293,11 @@ function genCard(challenger1, challenger2, winner) {
 
 // Testing below this line
 
-
+function enableButtonColor(){
+	if (buttonClear.disabled = false){
+		this.button.style.background = "#6E6E6E";
+	}
+}
 
 
 
