@@ -9,19 +9,8 @@ var maxRange = document.querySelector('.input--max-range');
 var buttonRangeUpdate = document.querySelector('.button--update-range');
 var minNumber = document.querySelector('.min-number');
 var maxNumber = document.querySelector('.max-number');
-// var _min = 1;
-// var _max = 100;
-//minRange = Math.min(Math.max(parseInt(number), 1), 100);
-//maxRange = Math.min(Math.max(parseInt(number), 1), 100);
 
-// function minBound(minRange,_min,_max){
 
-//         return Math.max(Math.min(_number, _max), _min);
-// }
-
-// function maxBound(maxRange, _min, _max){
-//         return Math.max(Math.min(_number, _max), _min);
-// }
 
 var p1NameInput  = document.querySelector('.input--p1-name');
 var p2NameInput  = document.querySelector('.input--p2-name');
@@ -47,44 +36,67 @@ var winner;
 
 buttonRangeUpdate.addEventListener("click", rangeError);
 
+
+
+
 function rangeError(){
-	if(minRange.value >= maxRange.value){
-		//range error alert
+	var min = parseInt(minRange.value);
+	var max = parseInt(maxRange.value);
+	console.log(min);
+	console.log(max);
+	if(min >= max){
+		alert('Min & Max Range Conflict');
+	}else if(isNaN(min) || isNaN(max)){
 		alert('Min & Max Range Conflict');
 	}else{getRandom()};
-}
-
+};
 
 function getRandom() {
- var min = Math.ceil(minRange.value);
- var max = Math.floor(maxRange.value);
+ var min = Math.ceil(parseInt(minRange.value));
+ var max = Math.floor(parseInt(maxRange.value));
 
  randomNum = Math.floor(Math.random() * (max - min)) + min;
  minNumber.innerText = min;
  maxNumber.innerText = max;
  console.log('randomNum' + randomNum);
  return randomNum;
-}
+};
+
+
 
 buttonSubmitGuess.addEventListener("click", minError);
 
+//you can make minError an maxerror dynamic
+// create a new function 
+// pass in arguments
 
 function minError(){
-	if(minRange.value > p1GuessInput.value){
+	var p1 = parseInt(p1GuessInput.value);
+	var p2 = parseInt(p2GuessInput.value);
+	var min = parseInt(minRange.value);
+	var max = parseInt(maxRange.value);
+	if(min > p1){
 		alert('Player 1 Guess Below Range');
-	}else if(minRange.value > p2GuessInput.value){
+	}else if(min > p2){
 		alert('Player 2 Guess Below Range');
+	}else if(isNaN(p1) || isNaN(p2)){
+		alert('Player Guess Missing');
+	}else if(p1NameInput.value === '' || p2NameInput.value === ''){
+		alert('Player Name Missing');
 	}else{
 		maxError();
-	}
-	
+	};
 	
 };
 
 function maxError(){
-	if(maxRange.value < p1GuessInput.value){
+	var p1 = parseInt(p1GuessInput.value);
+	var p2 = parseInt(p2GuessInput.value);
+	var min = parseInt(minRange.value);
+	var max = parseInt(maxRange.value);
+	if(max < p1){
 		alert('Player 1 Guess Over Range');
-	}else if(maxRange.value < p2GuessInput.value){
+	}else if(max < p2){
 		alert('Player 2 Guess Over Range');
 	}else{
 		nameHandler();
@@ -107,6 +119,13 @@ function nameHandler() {
 	p2GuessOutput.innerText = g2;
 }
 
+
+
+
+// refactor into one function 
+// a function that determines the player
+// invoke guess function by passing in that player
+// invoke guess function for the other player
 
 function p1Guess() {
 	var g1 = p1GuessInput.value;
@@ -162,6 +181,15 @@ function winnerStatement(){
 
 }
 
+// var arr = [1,2,3,4,5,6,7]
+// for(var i = 0; i < arr.length; i++){
+// 	arr[0]
+// }
+// add a new class in css to everything you want to clear
+// query select all = array
+// create a function with a for loop to iterate through that array and reset evryone to ''
+// pass in the query selected array
+
 buttonClear.addEventListener('click', () =>{
   buttonClear.disabled = true;	  // figure out how to make clear button disabled without this line
 	p1NameOutput.innerText = 'Challenger 1';
@@ -174,6 +202,8 @@ buttonClear.addEventListener('click', () =>{
 	p2NameInput.value = '';
 	p1GuessInput.value = '';
 	p2GuessInput.value = '';
+	p1GuessOutput.innerText = '#';
+	p2GuessOutput.innerText = '#';
 });
 
 buttonReset.addEventListener('click', () =>{
@@ -190,7 +220,8 @@ buttonReset.addEventListener('click', () =>{
 	p2NameInput.value = '';
 	p1GuessInput.value = '';
 	p2GuessInput.value = '';
-
+	p1GuessOutput.innerText = '#';
+	p2GuessOutput.innerText = '#';
 });
 
 
