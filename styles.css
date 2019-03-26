@@ -6,6 +6,12 @@
   padding:0;
 }
 
+h1 {
+  font-weight: 700;
+  font-size: 50px;
+  color: #F74D9B;
+}
+
 h2{
   color:#6E6E6E;
   font-size:18px;
@@ -38,8 +44,27 @@ header {
   color: #ffffff;
 }
 
+.header-text:before, .header-text:after {
+  content:"";
+  display: inline-block;
+  border-top: solid 1px grey;
+  position: relative;
+  vertical-align: middle;
+  width: 140px;
+}
+
+.header-text:before {
+ right: 0.5em;
+ margin-left: -50%;
+}
+
+.header-text:after {
+ left: 0.5em;
+ margin-right: -50%;
+}
+
 .header-small-text{
-  color: #DD1972;
+  color: #F74D9B;
 }
 
 /*Main*/
