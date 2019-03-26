@@ -154,15 +154,17 @@ height:25px;
   font-weight: bold;
 }
 
+.button--update-range:disabled {
+  background-color: #D0D2D3;
+}
+
+.button--update-range:enabled {
+  background-color: #6E6E6E;
+}
+
 .button--update-range:hover {
   background-color: #F74D9B;
 }
-
-.button--update-range:disabled {
-  
-}
-
-
 
 
 
@@ -253,8 +255,6 @@ height:25px;
   width:30%;
 }
 
-
-
 .range-buttons{
   height:10%;
   width:100%;
@@ -271,6 +271,14 @@ height:25px;
   height: 30px;
   font-size: 15px;
   font-weight: bold;
+}
+
+.button--submit-guess:disabled {
+  background-color: #D0D2D3;
+}
+
+.button--submit-guess:enabled {
+  background-color: #6E6E6E;
 }
 
 .button--submit-guess:hover {
