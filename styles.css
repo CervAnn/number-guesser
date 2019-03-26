@@ -6,6 +6,12 @@
   padding:0;
 }
 
+h1 {
+  font-weight: 700;
+  font-size: 50px;
+  color: #F74D9B;
+}
+
 h2{
   color:#6E6E6E;
   font-size:18px;
@@ -38,8 +44,27 @@ header {
   color: #ffffff;
 }
 
+.header-text:before, .header-text:after {
+  content:"";
+  display: inline-block;
+  border-top: solid 1px grey;
+  position: relative;
+  vertical-align: middle;
+  width: 140px;
+}
+
+.header-text:before {
+ right: 0.5em;
+ margin-left: -50%;
+}
+
+.header-text:after {
+ left: 0.5em;
+ margin-right: -50%;
+}
+
 .header-small-text{
-  color: #DD1972;
+  color: #F74D9B;
 }
 
 /*Main*/
@@ -66,30 +91,31 @@ main{
 /*Set Range Box*/
 
 .set-range-box{
-  background-color:#FFFFFF;
-  border:2px solid grey;
-  height:17%;
-  width:93%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: baseline;
-  align-content: start;
+    background-color: #FFFFFF;
+    border: 2px solid grey;
+    height: 17%;
+    width: 93%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    align-content: start;
 }
 
 .ranges{
-display:flex;
-flex-wrap:wrap;
-justify-content:space-around;
-align-content:flex-start;
-padding-left:2%;
-padding-right:2%;
-height:75%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 3%;
 }
 
 .set-range{
-  width:100%;
-  padding-left:3%;
+  width: 100%;
+  margin-left: 3%;
+  display: flex;
+  margin-top: 1%;
+  margin-left: 3%;
+  font-weight: bold;
 }
 .label-min-range{
   height:25px;
@@ -119,7 +145,7 @@ height:25px;
 .button--update-range{
   /*background-color:#6E6E6E;
   color:#FFFFFF;*/
-  background-color:#D0D2D3;
+  background-color:#6E6E6E;
   color:#FFFFFF;
   width: 22%;
   min-width: 105px;
@@ -147,18 +173,16 @@ height:25px;
 }
 
 .current-range-text{
-  width:50%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+    width: 50%;
+    display: flex;
+    margin-top: 1%;
+    margin-left: 3%;
+
 }
 
-.min-number{
+.min-number, .max-number {
   text-decoration:underline;
-}
-
-.max-number{
-  text-decoration:underline;
+  font-weight: bold;
 }
 
 .challenger-tag{
@@ -232,7 +256,7 @@ width:58%;
 }
 
 .button--submit-guess{
-  background-color:#D0D2D3;
+  background-color:#6E6E6E;
   color:#FFFFFF;
   width: 30%;
   min-width: 150px;
