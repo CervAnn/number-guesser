@@ -88,7 +88,7 @@ function minError(){
 	};
 	
 };
-
+//switch p1GuessInput, maxRange//
 function maxError(){
 	var p1 = parseInt(p1GuessInput.value);
 	var p2 = parseInt(p2GuessInput.value);
@@ -319,7 +319,11 @@ function genCard(challenger1, challenger2, winner) {
 
 // Testing below this line
 
-
+function enableButtonColor(){
+	if (buttonClear.disabled = false){
+		this.button.style.background = "#6E6E6E";
+	}
+}
 
 
 

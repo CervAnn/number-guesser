@@ -3,22 +3,21 @@
     <link rel="stylesheet" href="styles.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
     <script type="text/javascript" src="main.js" async></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <header>
-      <h1>NUMBER<span class="header-small-text">Guesser</span></h1>
-      <p class="header-text">Ultimate Challenger Edition</p>
+      <h1>NUMBER<span class="header-small-text">GUESSER</span></h1>
+      <p class="header-text">ULTIMATE CHALLENGER EDITION</p>
     </header>
     <main>
       <section class="current-game">
         <!--                               Set Range Box -->
         <div class="set-range-box">
           <p class="set-range">Set Range</p>
-          <!-- Change to form, there will be minor input problems -->
           <form class='ranges'>
             <label for="min-range" class="label-min-range">Min Range</label>
             <label for="max-range" class="label-max-range">Max Range</label>
-            <!-- Find out how to eliminate e , and - from number -->
             <input class="input--min-range" type="number" name="min-range"/>
             <input class="input--max-range" type="number" name="max-range"/>
             <input class="button--update-range" type="button" value="UPDATE">
@@ -29,14 +28,14 @@
         <div class="current-range-box">
           <p class="current-range-text">The Current Range Is&nbsp;<span class="min-number">1</span>&nbsp;To&nbsp;<span class="max-number">&nbsp;100</span></p>
           <form class="p1-info">
-            <h2 class="challenger-tag">Challenger 1</h2>           
+            <p class="challenger-tag challenger-tag-p1">Challenger 1</p>           
               <label for="p1-name" class="p1-name">Name</label>
               <label for="p1-guess" class="p1-guess">Guess</label>
               <input class="input--p1-name" type="text" name="p1-name"/>
               <input class="input--p1-guess" type="number" name="p1-guess"/>
           </form>
           <form class="p2-info">
-            <h2 class="challenger-tag">Challenger 2</h2>
+            <p class="challenger-tag challenger-tag-p2">Challenger 2</p>
             <label for="p2-name" class="p2-name">Name</label>
             <label for="p2-guess" class="p2-guess">Guess</label>
             <input class="input--p2-name" type="text" name="p2-name"/>
@@ -50,16 +49,16 @@
         </div>
         <!--                               Latest Score Box -->
         <div class="latest-score-box">
-          <h2 class="score-header">Latest Score</h2>
+          <p class="score-header">Latest Score</p>
             <div class="output--p1-response">
               <span class="output--p1-name">Challenger 1 Name</span>
-              <p>Current guess</p>
+              <p>current guess</p>
               <span class="output--p1-guess">#</span>
               <span class="p1-hi-lo">hilo</span>
             </div>
             <div class="output--p2-response">
               <span class="output--p2-name">Challenger 2 Name</span>
-              <p>Current guess</p>
+              <p>current guess</p>
               <span class="output--p2-guess">#</span>
               <span class="p2-hi-lo">hilo</span>
             </div>   
