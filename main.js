@@ -53,31 +53,31 @@ maxRange.addEventListener('keyup', checkResetDisabled);
 
 //Input range error conditions
 
-function rangeError(){
+function rangeError() {
 	var min = parseInt(minRange.value);
 	var max = parseInt(maxRange.value);
-	if(min >= max){
+	if (min >= max) {
 		alert('Min & Max Range Conflict');
-	}else if(isNaN(min) || isNaN(max)){
+	} else if (isNaN(min) || isNaN(max)) {
 		alert('Min & Max Range Conflict');
-	}else{getRandom()};
+	} else {getRandom()};
 };
 
 //Random number generator
 
-function getRandom(){
- var min = Math.ceil(parseInt(minRange.value));
- var max = Math.floor(parseInt(maxRange.value));
- randomNum = Math.floor(Math.random() * (max - min)) + min;
- minNumber.innerText = min;
- maxNumber.innerText = max;
- console.log('randomNum' + randomNum);
- return randomNum;
+function getRandom() {
+	var min = Math.ceil(parseInt(minRange.value));
+ 	var max = Math.floor(parseInt(maxRange.value));
+ 	randomNum = Math.floor(Math.random() * (max - min)) + min;
+ 	minNumber.innerText = min;
+ 	maxNumber.innerText = max;
+ 	console.log('randomNum' + randomNum);
+ 	return randomNum;
 };
 
 //Establish local variables
 
-function localVarMachine(){
+function localVarMachine() {
 	var min = parseInt(minRange.value);
 	var max = parseInt(maxRange.value);
 	var g1 = parseInt(p1GuessInput.value);
@@ -89,32 +89,32 @@ function localVarMachine(){
 
 //Name and guess error conditions
 
-function nameError(min, max, g1, g2, p1, p2){
-	if(p1NameInput.value === '' || p2NameInput.value === ''){
+function nameError(min, max, g1, g2, p1, p2) {
+	if (p1NameInput.value === '' || p2NameInput.value === '') {
 		alert('Player Name Missing');
-	}else{
+	} else {
 		minError(min, max, g1, g2, p1, p2);
 	};
 };
 
-function minError(min, max, g1, g2, p1, p2){
-	if(min > g1){
+function minError(min, max, g1, g2, p1, p2) {
+	if (min > g1) {
 		alert('Player 1 Guess Below Range');
-	}else if(min > g2){
+	} else if(min > g2) {
 		alert('Player 2 Guess Below Range');
-	}else if(isNaN(g1) || isNaN(g2)){
+	} else if(isNaN(g1) || isNaN(g2)) {
 		alert('Player Guess Missing');
-	}else{
+	} else {
 		maxError(min, max, g1, g2, p1, p2);
 	};
 };
 
-function maxError(min, max, g1, g2, p1, p2){
-	if(max < g1){
+function maxError(min, max, g1, g2, p1, p2) {
+	if (max < g1) {
 		alert('Player 1 Guess Over Range');
-	}else if(max < g2){
+	} else if (max < g2) {
 		alert('Player 2 Guess Over Range');
-	}else{
+	} else {
 		nameHandler(min, max, g1, g2, p1, p2);
 		p1Guess(min, max, g1, g2, p1, p2);
 		p2Guess(min, max, g1, g2, p1, p2);
@@ -123,7 +123,7 @@ function maxError(min, max, g1, g2, p1, p2){
 
 //Populates player name and guess
 
-function nameHandler(min, max, g1, g2, p1, p2){
+function nameHandler(min, max, g1, g2, p1, p2) {
 	p1NameOutput.innerText = p1;
 	p2NameOutput.innerText = p2;
 	p1GuessOutput.innerText = g1;
@@ -132,71 +132,71 @@ function nameHandler(min, max, g1, g2, p1, p2){
 
 //Determins game winner
 
-function p1Guess(min, max, g1, g2, p1, p2){
-	 if (g1 < randomNum) {
-	 	p1HiLo.innerText = "That's too low";
-	 } else if (g1 > randomNum) {
-	 	p1HiLo.innerText = "That's too high";
-	 } else if (g1 == randomNum) {
-	 	p1HiLo.innerText = "BOOM!";
-	 	w1 = p1;
-	 	winnerStatement(min, max, g1, g2, p1, p2, w1);
-	 };
+function p1Guess(min, max, g1, g2, p1, p2) {
+	if (g1 < randomNum) {
+		p1HiLo.innerText = 'That\'s too low';
+	} else if (g1 > randomNum) {
+		p1HiLo.innerText = 'That\'s too high';
+	} else if (g1 == randomNum) {
+		p1HiLo.innerText = 'BOOM!';
+		w1 = p1;
+		winnerStatement(min, max, g1, g2, p1, p2, w1);
+	};
 };
 
-function p2Guess(min, max, g1, g2, p1, p2, w1){
-	 if (g2 < randomNum) {
-	 	p2HiLo.innerText = "That's too low";
-	 } else if (g2 > randomNum) {
-	 	p2HiLo.innerText = "That's too high";
-	 } else if (g2 == randomNum) {
-	 	p2HiLo.innerText = "BOOM!";
+function p2Guess(min, max, g1, g2, p1, p2, w1) {
+	if (g2 < randomNum) {
+	 	p2HiLo.innerText = 'That\'s too low';
+	} else if (g2 > randomNum) {
+	 	p2HiLo.innerText = 'That\'s too high';
+	} else if (g2 == randomNum) {
+	 	p2HiLo.innerText = 'BOOM!';
 	 	w2 = p2;
 	 	winnerStatement(min, max, g1, g2, p1, p2, w1, w2);
-	 };
+	};
 };
 
-function winnerStatement(min, max, g1, g2, p1, p2, w1, w2){
+function winnerStatement(min, max, g1, g2, p1, p2, w1, w2) {
 	var winner;
-	if ((w1 === p1) && (w2 === p2)){
-		winner = "It's a Tie";
+	if ((w1 === p1) && (w2 === p2)) {
+		winner = 'It\'s a Tie';
 		alert('BOOM!');
 		winReset(p1, p2, winner);
-	}else if(w1 === p1){
+	} else if(w1 === p1) {
 		winner = p1;
 		alert('BOOM!');
 		winReset(p1, p2, winner);
-	}else if(w2 === p2){
+	} else if(w2 === p2) {
 		winner = p2;
 		alert('BOOM!');
 		winReset(p1, p2, winner);
 	};
 };
 
-function winReset(p1, p2, winner){
+function winReset(p1, p2, winner) {
 	genCard(p1, p2, winner);
 };
 
 //Clear button disable functions
 
-function checkClearDisabled(){
-	if(buttonClear.disabled === true){
+function checkClearDisabled() {
+	if (buttonClear.disabled === true) {
 		clearDisable();
 	};
 };
 
-function clearDisable(){ 
-	if(p1NameInput.value === '' &&
-		 p2NameInput.value === '' &&
-		 p1GuessInput.value === '' &&  
-		 p2GuessInput.value === ''){
-		 buttonClear.disabled = true;
-		}else{
-			buttonClear.disabled = false;
-		};
+function clearDisable() { 
+	if (p1NameInput.value === '' &&
+		p2NameInput.value === '' &&
+		p1GuessInput.value === '' &&  
+		p2GuessInput.value === '') {
+		buttonClear.disabled = true;
+	} else {
+		buttonClear.disabled = false;
+	};
 };
 
-function clear(){
+function clear() {
 	p1NameOutput.innerText = 'Challenger 1';
 	p2NameOutput.innerText = 'Challenger 2';
 	p1GuessOutput.innerText = 'Challenger 1 needs to guess';
@@ -213,26 +213,26 @@ function clear(){
 
 //Reset button disable functions
 
-function checkResetDisabled(){
-	if(buttonReset.disabled === true){
+function checkResetDisabled() {
+	if (buttonReset.disabled === true) {
 		resetDisable();
 	};
 };
 
-function resetDisable(){ 
-	if(p1NameInput.value === '' &&
-		 p2NameInput.value === '' &&
-		 p1GuessInput.value === '' &&  
-		 p2GuessInput.value === '' &&
-		 minRange.value === '' &&
-		 maxRange.value === ''){
-		 buttonReset.disabled = true;
-	}else{
+function resetDisable() { 
+	if (p1NameInput.value === '' &&
+		p2NameInput.value === '' &&
+		p1GuessInput.value === '' &&  
+		p2GuessInput.value === '' &&
+		minRange.value === '' &&
+		maxRange.value === '') {
+		buttonReset.disabled = true;
+	} else {
 		buttonReset.disabled = false;
 	};
 };
 
-function reset(){
+function reset() {
 	minRange.value = '1';
 	maxRange.value = '100';
 	getRandom();
@@ -252,7 +252,7 @@ function reset(){
 
 //Creates the winner card
 
-function genCard(p1, p2, winner){
+function genCard(p1, p2, winner) {
 	var winnerBox = `
 	<div class="winner-box">
           <div class="contestant-names">
